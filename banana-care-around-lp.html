@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ばななケアラウンド｜訪問介護・居宅介護サービス事業所（大阪市東淀川区・北摂）</title>
+<meta name="description" content="ばななケアラウンドは大阪市北部・北摂エリアの訪問介護／障がい福祉（居宅介護）サービス事業所です。ケアマネジャー・医療機関からのご紹介、ご本人・ご家族からの直接相談を承ります。初回相談無料。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FCF0B4; --cream-2:#F8E795; --white:#FFFDF4;
+  --banana:#F2D45C; --banana-deep:#E0BC44;
+  --ink:#2E2A1C; --ink-soft:#6E6648; --brown:#7A5230;
+  --line:#E6D58C; --linegreen:#06C755; --dark:#33291A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);font-family:'Noto Sans JP',sans-serif;color:var(--ink);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.mincho{font-family:'Noto Serif JP',serif}
+.ctn{font-family:'Archivo',sans-serif;font-weight:800;font-stretch:125%;font-variation-settings:'wdth' 125;letter-spacing:.03em;line-height:1.02}
+
+.topbar{position:sticky;top:0;z-index:100;background:var(--cream);transition:box-shadow .35s ease}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1040px;margin:0 auto;flex-wrap:wrap;gap:12px;transition:padding .35s ease}
+.topbar.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.topbar.scrolled .topbar-inner{padding:8px 24px}
+.topbar .logo{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:600;letter-spacing:.06em;color:var(--ink)}
+.topbar .logo small{display:block;font-size:11px;letter-spacing:.18em;color:var(--brown);font-weight:600;margin-top:2px;font-family:'Archivo',sans-serif;font-stretch:125%}
+.topbar .right{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.topbar .navlink{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--brown);text-decoration:none;border-bottom:1px solid var(--banana-deep);padding-bottom:2px}
+.topbar .tel{font-family:'Noto Serif JP',serif;font-weight:600;color:var(--ink);font-size:15px;text-decoration:none}
+.topbar .tel b{font-size:20px;letter-spacing:.02em}
+.topbar .tel small{display:block;font-size:11px;color:var(--ink-soft);font-weight:400;font-family:'Noto Sans JP'}
+
+.hero{padding:0 16px 8px}
+.hero-media{border-radius:14px;overflow:hidden}
+.hero img{display:block;width:100%;height:auto}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:26px 0 4px}
+.btn{font-size:15px;padding:15px 30px;border-radius:8px;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;font-family:'Noto Serif JP',serif;font-weight:600;letter-spacing:.05em}
+.btn-ink{background:var(--ink);color:var(--cream)}
+.btn-line{background:var(--linegreen);color:#fff;font-weight:700}
+.btn-out{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn:hover{opacity:.9}
+
+.section{padding:60px 24px}
+.section-2{background:var(--cream-2)}
+.eyebrow{display:block;text-align:center;color:var(--brown);font-size:13px;margin-bottom:10px}
+.sec-h{font-family:'Noto Serif JP',serif;font-size:27px;font-weight:600;text-align:center;line-height:1.55;letter-spacing:.03em;margin-bottom:12px}
+.sec-lead{text-align:center;color:var(--ink-soft);font-size:15px;margin-bottom:40px;line-height:1.9}
+
+.philo{text-align:center;max-width:760px;margin:0 auto}
+.philo .big{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:600;line-height:1.7;letter-spacing:.04em;margin-bottom:20px}
+.philo .big em{font-style:normal;color:var(--brown)}
+.philo p{color:var(--ink-soft);font-size:15px;line-height:2}
+
+/* routes */
+.routes{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.route{background:var(--white);border:1px solid var(--line);border-radius:13px;padding:22px 22px;display:flex;gap:14px;align-items:flex-start}
+.route .ic{width:42px;height:42px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--brown);flex-shrink:0}
+.route h4{font-family:'Noto Serif JP',serif;font-size:15.5px;font-weight:600;margin-bottom:5px;letter-spacing:.02em}
+.route p{color:var(--ink-soft);font-size:13.5px;line-height:1.7}
+
+.worry-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:840px;margin:0 auto}
+.worry{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px 20px;display:flex;gap:13px;align-items:flex-start}
+.worry .dot{width:9px;height:9px;border-radius:50%;background:var(--banana-deep);flex-shrink:0;margin-top:10px}
+.worry p{font-size:15px;line-height:1.7}
+
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:900px;margin:0 auto}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+.svc .ic{width:50px;height:50px;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--brown)}
+.svc .tag{display:inline-block;background:var(--cream);color:var(--brown);font-family:'Noto Serif JP',serif;font-size:12px;font-weight:600;padding:4px 12px;border-radius:5px;margin-bottom:10px;letter-spacing:.08em}
+.svc h3{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:600;margin-bottom:10px;letter-spacing:.02em}
+.svc p{color:var(--ink-soft);font-size:14.5px;line-height:1.85}
+.note{max-width:900px;margin:22px auto 0;background:var(--white);border:1px dashed var(--banana-deep);border-radius:10px;padding:16px 20px;text-align:center;color:var(--brown);font-size:14px}
+
+/* partners (professional referrers) */
+.partner-wrap{max-width:960px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-top:4px solid var(--banana-deep);border-radius:14px;padding:38px 34px}
+.partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px 26px;margin-bottom:28px}
+.pitem{display:flex;gap:13px;align-items:flex-start}
+.pitem .ic{width:38px;height:38px;border-radius:9px;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--brown);flex-shrink:0}
+.pitem h4{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;margin-bottom:4px;letter-spacing:.02em}
+.pitem p{color:var(--ink-soft);font-size:13.5px;line-height:1.7}
+.recv{background:var(--dark);border-radius:13px;padding:26px 28px;color:var(--cream)}
+.recv .rt{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600;color:var(--banana);margin-bottom:16px;letter-spacing:.04em}
+.recv-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:16px}
+.recv-box{background:rgba(252,240,180,0.08);border:1px solid rgba(252,240,180,0.2);border-radius:9px;padding:14px 16px}
+.recv-box span{display:block;font-size:11px;color:rgba(252,240,180,0.6);letter-spacing:.14em;margin-bottom:4px;font-family:'Archivo';font-stretch:115%}
+.recv-box b{font-size:21px;color:var(--cream);letter-spacing:.02em}
+.recv-box small{display:block;font-size:12px;color:rgba(252,240,180,0.65);margin-top:3px}
+.recv-box a{color:var(--banana);text-decoration:none}
+.recv-note{font-size:13px;color:rgba(252,240,180,0.8);line-height:1.7}
+.pflow{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.pstep{flex:1;min-width:160px;background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:16px;position:relative}
+.pstep .num{font-family:'Archivo';font-stretch:125%;font-weight:800;font-size:13px;color:var(--banana-deep);letter-spacing:.1em;margin-bottom:6px}
+.pstep h5{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:600;margin-bottom:4px}
+.pstep p{font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+
+.str-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;max-width:840px;margin:0 auto}
+.str{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:30px 22px;text-align:center}
+.str .mk{font-family:'Noto Serif JP',serif;font-size:30px;font-weight:600;color:var(--banana-deep);line-height:1;margin-bottom:10px}
+.str .un{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;margin-bottom:10px}
+.str .lb{color:var(--ink-soft);font-size:14px;line-height:1.65}
+.area{max-width:840px;margin:22px auto 0;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center}
+.area .t{font-family:'Noto Serif JP',serif;font-weight:600;font-size:17px;margin-bottom:14px;letter-spacing:.03em}
+.pill{display:inline-block;background:var(--cream);color:var(--brown);font-size:14px;padding:6px 15px;border-radius:20px;margin:5px;border:1px solid var(--line)}
+
+.flow{max-width:720px;margin:0 auto;list-style:none;position:relative}
+.flow::before{content:'';position:absolute;left:25px;top:14px;bottom:40px;width:1.5px;background:var(--line)}
+.flow li{display:flex;gap:20px;align-items:flex-start;margin-bottom:30px;position:relative}
+.flow li:last-child{margin-bottom:0}
+.flow .n{width:50px;height:50px;border-radius:50%;background:var(--banana);border:2px solid var(--banana-deep);color:var(--ink);font-family:'Noto Serif JP',serif;font-weight:600;font-size:19px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+.flow h4{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:600;margin-bottom:6px;letter-spacing:.02em}
+.flow p{color:var(--ink-soft);font-size:14.5px;line-height:1.75}
+
+.contact{background:var(--dark);padding:64px 24px}
+.contact .eyebrow{color:var(--banana)}
+.contact .sec-h{color:var(--cream)}
+.contact .sec-lead{color:rgba(252,240,180,0.72)}
+.c-wrap{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.c-list{display:flex;flex-direction:column;gap:14px}
+.c-card{background:rgba(252,240,180,0.07);border:1px solid rgba(252,240,180,0.18);border-radius:12px;padding:20px;display:flex;align-items:center;gap:16px}
+.c-ic{width:48px;height:48px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
+.c-card h4{font-family:'Noto Serif JP',serif;color:var(--cream);font-size:15px;font-weight:600;margin-bottom:3px;letter-spacing:.03em}
+.c-card p{color:rgba(252,240,180,0.66);font-size:13.5px;line-height:1.55}
+.c-card a{color:var(--banana);text-decoration:none}
+.form{background:rgba(252,240,180,0.06);border:1px solid rgba(252,240,180,0.18);border-radius:14px;padding:28px}
+.form .ft{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:600;color:var(--cream);margin-bottom:8px;letter-spacing:.04em}
+.form .fsub{font-size:12.5px;color:rgba(252,240,180,0.6);margin-bottom:18px}
+.fr{margin-bottom:15px}
+.fr label{display:block;font-size:13px;color:rgba(252,240,180,0.82);margin-bottom:6px}
+.fr input,.fr textarea,.fr select{width:100%;background:rgba(252,240,180,0.1);border:1px solid rgba(252,240,180,0.24);border-radius:8px;padding:12px 14px;color:var(--cream);font-size:14px;font-family:inherit}
+.fr input::placeholder,.fr textarea::placeholder{color:rgba(252,240,180,0.38)}
+.fr select{appearance:none}
+.fr select option{color:#222}
+.fr textarea{height:96px;resize:vertical}
+.submit{width:100%;background:var(--banana);color:var(--ink);font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;padding:15px;border-radius:8px;border:none;cursor:pointer;margin-top:8px;letter-spacing:.06em}
+.submit:hover{background:var(--banana-deep)}
+.submit:disabled{opacity:.6;cursor:not-allowed}
+.form-msg{display:none;margin-bottom:16px;padding:12px 14px;border-radius:8px;font-size:13.5px;line-height:1.7}
+.form-msg.is-visible{display:block}
+.form-msg.success{background:rgba(242,212,92,0.15);border:1px solid rgba(242,212,92,0.4);color:var(--banana)}
+.form-msg.error{background:rgba(220,120,90,0.12);border:1px solid rgba(220,120,90,0.35);color:#E8A98C}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;line-height:1;padding:3px 7px;border-radius:4px;margin-left:7px;letter-spacing:.06em;vertical-align:1px}
+.badge-req{background:var(--banana);color:var(--ink)}
+.badge-opt{background:rgba(252,240,180,0.14);color:rgba(252,240,180,0.7);border:1px solid rgba(252,240,180,0.25)}
+.fr input:user-invalid,.fr textarea:user-invalid{border-color:#E8A98C}
+
+.footer{background:#2B2316;padding:46px 24px;text-align:center}
+.footer .fctn{font-size:22px;color:var(--banana);margin-bottom:6px}
+.footer .fbrand{font-family:'Noto Serif JP',serif;color:var(--cream);font-size:18px;font-weight:600;letter-spacing:.1em;margin-bottom:4px}
+.footer .fco{font-size:12px;color:rgba(252,240,180,0.5);letter-spacing:.16em;margin-bottom:18px;font-family:'Archivo';font-stretch:110%}
+.footer .finfo{color:rgba(252,240,180,0.62);font-size:13px;line-height:2}
+.footer .copy{margin-top:18px;color:rgba(252,240,180,0.4);font-size:12px;letter-spacing:.1em;font-family:'Archivo';font-stretch:110%}
+
+@media(max-width:760px){
+  .section{padding:48px 18px}
+  .sec-h{font-size:23px}
+  .philo .big{font-size:21px}
+  .c-wrap{grid-template-columns:1fr}
+  .partner-wrap{padding:28px 20px}
+  .topbar-inner{justify-content:center;text-align:center}
+}
+
+/* hover/focus micro-interactions */
+.route, .worry, .svc, .str, .pstep{
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.btn, .submit{
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.route .ic, .svc .ic, .pitem .ic{
+  transition:background .25s ease, transform .25s ease;
+}
+.topbar .navlink{position:relative}
+.topbar .navlink::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:2px;
+  background:var(--banana-deep);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .3s ease;
+}
+@media (hover:hover){
+  .route:hover, .worry:hover, .svc:hover, .str:hover, .pstep:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(46,42,28,.10);
+  }
+  .btn:hover, .submit:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(46,42,28,.16);
+  }
+  .route:hover .ic, .svc:hover .ic, .pitem:hover .ic{
+    background:var(--banana);
+    transform:rotate(-4deg) scale(1.06);
+  }
+  .topbar .navlink:hover::after{
+    transform:scaleX(1);
+  }
+}
+.btn:active, .submit:active{
+  transform:translateY(1px);
+}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--banana-deep);
+  outline-offset:2px;
+}
+
+/* soft attention pulse: primary phone CTA only */
+@keyframes softPulse{
+  0%{ box-shadow:0 0 0 0 rgba(224,188,68,.45); }
+  70%{ box-shadow:0 0 0 12px rgba(224,188,68,0); }
+  100%{ box-shadow:0 0 0 0 rgba(224,188,68,0); }
+}
+@keyframes telRing{
+  0%, 20%, 100%{ transform:rotate(0); }
+  4%{ transform:rotate(-12deg); }
+  8%{ transform:rotate(10deg); }
+  12%{ transform:rotate(-8deg); }
+  16%{ transform:rotate(6deg); }
+}
+.hero-cta .btn-ink{
+  animation:softPulse 4s ease-out 2.5s infinite;
+}
+.hero-cta .btn-ink:hover{
+  animation:none;
+}
+.mcb-tel svg{
+  animation:telRing 4s ease-in-out 2.5s infinite;
+}
+@media (prefers-reduced-motion: reduce){
+  .route, .worry, .svc, .str, .pstep, .btn, .submit{
+    transition:box-shadow .25s ease;
+  }
+  .route:hover, .worry:hover, .svc:hover, .str:hover, .pstep:hover,
+  .btn:hover, .submit:hover,
+  .btn:active, .submit:active,
+  .route:hover .ic, .svc:hover .ic, .pitem:hover .ic{
+    transform:none;
+  }
+  .topbar .navlink::after{
+    transition:none;
+  }
+  .hero-cta .btn-ink, .mcb-tel svg{
+    animation:none;
+  }
+}
+
+/* hero entrance on first load */
+@keyframes heroReveal{
+  to{ opacity:1; transform:translateY(0); }
+}
+@keyframes scrollBounce{
+  0%, 100%{ transform:translateY(0); }
+  50%{ transform:translateY(6px); }
+}
+@keyframes kenBurns{
+  from{ transform:scale(1); }
+  to{ transform:scale(1.04); }
+}
+.hero-media{
+  opacity:0;
+  transform:translateY(16px);
+  animation:heroReveal .7s ease forwards;
+}
+.hero img{
+  animation:kenBurns 20s ease-out .7s forwards;
+}
+.hero-cta{
+  opacity:0;
+  transform:translateY(16px);
+  animation:heroReveal .7s ease forwards;
+  animation-delay:.3s;
+}
+.scroll-indicator{
+  display:flex;
+  justify-content:center;
+  margin:18px 0 4px;
+  color:var(--brown);
+  opacity:0;
+  transform:translateY(16px);
+  animation:heroReveal .7s ease forwards;
+  animation-delay:.55s;
+}
+.indicator-icon{
+  animation:scrollBounce 2s ease-in-out infinite;
+  animation-delay:1.3s;
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-media, .hero img, .hero-cta, .scroll-indicator{
+    opacity:1;
+    transform:none;
+    animation:none;
+  }
+  .indicator-icon{
+    animation:none;
+  }
+}
+
+/* scroll fade-in: hidden state applies only when JS has tagged <html class="js">; no-js always shows content */
+/* .hero is excluded: it has its own dedicated first-load entrance below */
+.js section:not(.hero),
+.js .route,
+.js .worry,
+.js .svc,
+.js .pitem,
+.js .str,
+.js .flow li,
+.js .pstep{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.js .pill{
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .5s ease, transform .5s ease;
+}
+.js section.is-visible,
+.js .route.is-visible,
+.js .worry.is-visible,
+.js .svc.is-visible,
+.js .pitem.is-visible,
+.js .str.is-visible,
+.js .flow li.is-visible,
+.js .pstep.is-visible,
+.js .pill.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .js section:not(.hero),
+  .js .route,
+  .js .worry,
+  .js .svc,
+  .js .pitem,
+  .js .str,
+  .js .flow li,
+  .js .pstep,
+  .js .pill{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
+
+/* reading progress bar */
+.scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  z-index:300;
+  pointer-events:none;
+}
+.scroll-progress-fill{
+  height:100%;
+  background:var(--banana-deep);
+  transform:scaleX(0);
+  transform-origin:left;
+}
+
+/* flow timeline line draws downward when the section enters view */
+.js .flow::before{
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform 1.2s ease;
+}
+.js section.is-visible .flow::before{
+  transform:scaleY(1);
+}
+@media (prefers-reduced-motion: reduce){
+  .js .flow::before{
+    transform:none;
+    transition:none;
+  }
+}
+
+/* offset anchor targets so the sticky header never covers them */
+#partners, #contact, #philosophy{
+  scroll-margin-top:var(--header-h, 90px);
+}
+
+/* mobile-only fixed bottom CTA bar */
+.mobile-cta-bar{
+  display:none;
+}
+@media(max-width:760px){
+  body{
+    padding-bottom:calc(56px + env(safe-area-inset-bottom));
+  }
+  .mobile-cta-bar{
+    display:flex;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    z-index:200;
+    background:var(--white);
+    border-radius:14px 14px 0 0;
+    overflow:hidden;
+    box-shadow:0 -2px 12px rgba(0,0,0,.08);
+    padding-bottom:env(safe-area-inset-bottom);
+    transform:translateY(100%);
+    pointer-events:none;
+    transition:transform .3s ease;
+  }
+  .mobile-cta-bar.is-shown{
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+  .mcb-btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:56px;
+    font-family:'Noto Serif JP',serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:.04em;
+    text-decoration:none;
+  }
+  .mcb-tel{background:var(--ink);color:var(--cream)}
+  .mcb-line{background:#06C755;color:#fff}
+}
+@media (prefers-reduced-motion: reduce){
+  .mobile-cta-bar{
+    transition:none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgressFill"></div></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">ばななケアラウンド<small>BNANA CARE AROUND</small></div>
+    <div class="right">
+      <a class="navlink" href="#partners">ケアマネ・関係機関の方へ</a>
+      <a class="tel" href="tel:0667559974"><small>お気軽にお電話ください（平日 9:00〜18:00）</small><b>06-6755-9974</b></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-media">
+    <img src="assets/kv.jpg" alt="ばななケアラウンド｜いまを支え、未来をつくる。訪問介護は暮らしのすぐそばにあるインフラです。">
+  </div>
+  <div class="hero-cta">
+    <a class="btn btn-ink" href="#contact">お電話で無料相談</a>
+    <a class="btn btn-line" href="#contact"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.28 2 11.5c0 2.94 1.4 5.56 3.6 7.36L5 22l3.24-1.7C9.37 20.73 10.65 21 12 21c5.52 0 10-4.28 10-9.5S17.52 2 12 2z"/></svg>LINEで相談する</a>
+    <a class="btn btn-out" href="#partners">ケアマネ・医療機関の方へ</a>
+  </div>
+  <a class="scroll-indicator" href="#philosophy" aria-label="次のセクションへスクロール">
+    <svg class="indicator-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</section>
+
+<section class="section" id="philosophy">
+  <div class="philo">
+    <p class="big">住み慣れた我が家で、自分らしく。<br><em>“いま”</em>を支え、<em>“未来”</em>をつくる。</p>
+    <p>ばななケアラウンドは、利用者さまお一人おひとりのペースに寄り添う訪問介護サービスです。子どもから高齢者まで、誰もが住み慣れた場所で自分らしく生きられる地域づくりを目指しています。ご本人・ご家族からのご相談はもちろん、ケアマネジャー・医療機関・関係機関からのご紹介も承ります。</p>
+  </div>
+</section>
+
+<section class="section section-2">
+  <span class="eyebrow ctn">CONSULTATION ROUTES</span>
+  <h2 class="sec-h">どの入口からでも、つながります。</h2>
+  <p class="sec-lead">訪問介護・居宅介護のご相談は、さまざまな経路から始まります。<br>どの段階・どのお立場からでも、お気軽にご相談・ご紹介ください。</p>
+  <div class="routes">
+    <div class="route">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><path d="M12 6.5v3M10.5 8h3"/></svg></div>
+      <div><h4>病院からの退院時</h4><p>地域連携室・退院支援室・MSWの皆様へ。退院後の在宅生活を、切れ目なくお支えします。退院前カンファレンスにも対応します。</p></div>
+    </div>
+    <div class="route">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
+      <div><h4>地域包括支援センター</h4><p>総合相談・初期相談の段階からご連携いただけます。要支援・要介護のいずれもご相談ください。</p></div>
+    </div>
+    <div class="route">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+      <div><h4>担当ケアマネジャー</h4><p>ケアプランに沿って、確実・丁寧にサービスをご提供します。空き状況はすぐにお答えします。</p></div>
+    </div>
+    <div class="route">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+      <div><h4>ご本人・ご家族から直接</h4><p>「どこに相談すれば…」という段階でも大丈夫。手続きやケアマネ探しも含めてご案内します。</p></div>
+    </div>
+    <div class="route">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M9 21a3 3 0 0 0 6 0v-3"/><circle cx="18" cy="13" r="2"/></svg></div>
+      <div><h4>かかりつけ医・主治医</h4><p>医療的な配慮が必要な方も、主治医・訪問看護と連携して在宅生活を支えます。</p></div>
+    </div>
+    <div class="route">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/></svg></div>
+      <div><h4>施設・老健からの退所時</h4><p>在宅復帰のタイミングに合わせて受け入れます。退所前のご相談・調整も承ります。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow ctn">WORRIES</span>
+  <h2 class="sec-h">「家にいたい」その想いを、<br>諦めなくていい。</h2>
+  <p class="sec-lead">ご本人・ご家族の介護に、こんな不安を感じていませんか。</p>
+  <div class="worry-grid">
+    <div class="worry"><div class="dot"></div><p>退院後、自宅での生活が不安</p></div>
+    <div class="worry"><div class="dot"></div><p>親の一人暮らしが心配になってきた</p></div>
+    <div class="worry"><div class="dot"></div><p>仕事と介護の両立がつらくなってきた</p></div>
+    <div class="worry"><div class="dot"></div><p>どこに相談すればいいかわからない</p></div>
+  </div>
+</section>
+
+<section class="section section-2">
+  <span class="eyebrow ctn">SERVICE</span>
+  <h2 class="sec-h">日常のすべてに、<br>寄り添うサポートを。</h2>
+  <p class="sec-lead">身体介護から生活援助まで、必要なサービスを組み合わせてご提供します。</p>
+  <div class="svc-grid">
+    <div class="svc">
+      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 13h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3z"/><path d="M6 13V7a2 2 0 0 1 2-2"/><circle cx="11" cy="6" r="1.6"/></svg></div>
+      <span class="tag">身体介護</span>
+      <h3>入浴・排泄・食事のサポート</h3>
+      <p>入浴介助、排泄ケア、食事の介助など、毎日の生活に必要なサポートを丁寧に行います。安全に、そして気持ちよく過ごしていただくことを大切にしています。</p>
+    </div>
+    <div class="svc">
+      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></div>
+      <span class="tag">生活援助</span>
+      <h3>家事・掃除・買い物の代行</h3>
+      <p>掃除・洗濯・調理・買い物など、日常の家事をサポートします。住み慣れたご自宅で、快適に過ごし続けるためのお手伝いです。</p>
+    </div>
+    <div class="svc">
+      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 16l1.5-5h11L19 16"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><path d="M4 16h16"/></svg></div>
+      <span class="tag">通院等乗降介助</span>
+      <h3>通院の付き添い・外出サポート</h3>
+      <p>通院や買い物、外出時の付き添いをサポートします。一人では不安な移動も、安心してお出かけいただけます。</p>
+    </div>
+  </div>
+  <div class="note">障がい福祉サービス（居宅介護）にも対応しております。65歳到達に伴う制度移行や、介護保険との併給のご相談も承ります。</div>
+</section>
+
+<section class="section" id="partners">
+  <span class="eyebrow ctn">FOR CARE MANAGERS &amp; PARTNERS</span>
+  <h2 class="sec-h">ケアマネジャー・医療機関・<br>関係機関の皆様へ</h2>
+  <p class="sec-lead">退院・退所のタイミングや、サービス調整の場面で、<br>安心してお任せいただけるよう体制を整えています。</p>
+  <div class="partner-wrap">
+    <div class="partner-grid">
+      <div class="pitem">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div><h4>迅速な受け入れ・空き状況</h4><p>受け入れ可否・空き状況をすぐにお答えします。退院・退所スケジュールに合わせて調整します。</p></div>
+      </div>
+      <div class="pitem">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h18M3 6h18M3 18h12"/></svg></div>
+        <div><h4>幅広いサービスに対応</h4><p>身体介護・生活援助・通院等乗降介助に対応。早朝・夜間帯のご相談も承ります。</p></div>
+      </div>
+      <div class="pitem">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="7" cy="9" r="3"/><circle cx="17" cy="9" r="3"/><path d="M2 20c0-3 2.5-5 5-5M22 20c0-3-2.5-5-5-5"/></svg></div>
+        <div><h4>医療・多職種連携</h4><p>退院前カンファレンスへの参加、主治医・訪問看護との連携に対応。サービス担当者会議も柔軟に調整します。</p></div>
+      </div>
+      <div class="pitem">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
+        <div><h4>介護保険＋障害福祉</h4><p>居宅介護（障害福祉）にも対応。65歳到達に伴う制度移行や併給のご相談も一貫して承ります。</p></div>
+      </div>
+      <div class="pitem">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16l-7-3-7 3z"/></svg></div>
+        <div><h4>報告・連携体制</h4><p>モニタリング報告やヒヤリハットの共有など、担当者様への報告・連絡を丁寧に行います。</p></div>
+      </div>
+      <div class="pitem">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="9" width="18" height="9" rx="1.5"/><path d="M7 9V4h10v5M7 18v3h10v-3"/></svg></div>
+        <div><h4>電話・FAXで受付</h4><p>ご紹介はお電話またはFAXで承ります。サービス提供責任者が直接対応いたします。</p></div>
+      </div>
+    </div>
+
+    <div class="recv">
+      <div class="rt">ケアマネジャー・関係機関 専用受付</div>
+      <div class="recv-row">
+        <div class="recv-box"><span>TEL</span><b><a href="tel:0667559974">06-6755-9974</a></b><small>サービス提供責任者宛／平日 9:00〜18:00</small></div>
+        <div class="recv-box"><span>FAX</span><b>06-6755-9974</b><small>紹介票・基本情報をご送付ください</small></div>
+        <div class="recv-box"><span>MAIL</span><b style="font-size:14px"><a href="mailto:forest.park.co9@vega.ocn.ne.jp">forest.park.co9@<br>vega.ocn.ne.jp</a></b></div>
+      </div>
+      <div class="recv-note">※「ご紹介票（フェイスシート）」のフォーマットをご用意しています。お電話・メールにてお気軽にご請求ください。空き状況のお問い合わせのみでも歓迎いたします。</div>
+    </div>
+
+    <div class="pflow">
+      <div class="pstep"><div class="num">STEP 1</div><h5>お問い合わせ・空き確認</h5><p>電話・FAX・メールにて受け入れ可否をご確認ください。</p></div>
+      <div class="pstep"><div class="num">STEP 2</div><h5>訪問・アセスメント</h5><p>ご本人へ訪問し、サービス担当者会議で内容を調整します。</p></div>
+      <div class="pstep"><div class="num">STEP 3</div><h5>サービス開始・報告</h5><p>契約後にサービスを開始。経過を継続的にご報告します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-2">
+  <span class="eyebrow ctn">REASONS</span>
+  <h2 class="sec-h">安心して任せられる、<br>3つの理由。</h2>
+  <p class="sec-lead">資格を持った専門スタッフが、地域に密着してサポートします。</p>
+  <div class="str-grid">
+    <div class="str"><div class="mk">無料</div><div class="un">初回相談</div><div class="lb">まずはお気軽に<br>ご相談ください</div></div>
+    <div class="str"><div class="mk">有資格</div><div class="un">専門スタッフ</div><div class="lb">資格を持つスタッフが<br>丁寧に対応します</div></div>
+    <div class="str"><div class="mk">地域密着</div><div class="un">迅速な対応</div><div class="lb">北摂エリアに根ざした<br>きめ細かなサポート</div></div>
+  </div>
+  <div class="area">
+    <div class="t">大阪市北部・北摂エリアに対応</div>
+    <div>
+      <span class="pill">東淀川区</span><span class="pill">淀川区</span><span class="pill">旭区</span>
+      <span class="pill">吹田市</span><span class="pill">豊中市</span><span class="pill">摂津市</span>
+      <span class="pill">茨木市</span><span class="pill">ほか近隣地域</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow ctn">FLOW</span>
+  <h2 class="sec-h">ご相談から利用開始まで。</h2>
+  <p class="sec-lead">初めての方でも、スタッフが丁寧にご案内します。</p>
+  <ul class="flow">
+    <li><div class="n">1</div><div><h4>ご相談（電話・LINE・フォーム・FAX）</h4><p>ご本人・ご家族はもちろん、ケアマネジャー・医療機関からのご紹介も承ります。費用や手続きのご質問も歓迎です。</p></div></li>
+    <li><div class="n">2</div><div><h4>ご自宅への訪問・アセスメント</h4><p>担当者がご自宅に伺い、必要なサポートの内容を一緒に確認します。</p></div></li>
+    <li><div class="n">3</div><div><h4>プランのご提案・サービス担当者会議</h4><p>ケアプランに沿って最適なプランをご提案。関係機関と連携し内容を調整します。</p></div></li>
+    <li><div class="n">4</div><div><h4>サービス開始・継続報告</h4><p>ご契約後、担当スタッフが伺いサービスを開始。経過を関係者へご報告します。</p></div></li>
+  </ul>
+</section>
+
+<section class="contact" id="contact">
+  <span class="eyebrow ctn">CONTACT</span>
+  <h2 class="sec-h">まずはお気軽にご相談を。</h2>
+  <p class="sec-lead">ご本人・ご家族からの直接相談も、関係機関からのご紹介も歓迎です。</p>
+  <div class="c-wrap">
+    <div class="c-list">
+      <div class="c-card">
+        <div class="c-ic" style="background:#5A8A4A"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg></div>
+        <div><h4>お電話でのご相談・ご紹介</h4><p>受付 平日 9:00〜18:00<br>TEL <a href="tel:0667559974">06-6755-9974</a></p></div>
+      </div>
+      <div class="c-card">
+        <div class="c-ic" style="background:#C49A3A"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="9" width="18" height="9" rx="1.5"/><path d="M7 9V4h10v5M7 18v3h10v-3" stroke="#fff" stroke-width="1.6" fill="none"/></svg></div>
+        <div><h4>FAXでのご紹介（関係機関）</h4><p>FAX 06-6755-9974<br>紹介票・基本情報をご送付ください</p></div>
+      </div>
+      <div class="c-card">
+        <div class="c-ic" style="background:#06C755"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.28 2 11.5c0 2.94 1.4 5.56 3.6 7.36L5 22l3.24-1.7C9.37 20.73 10.65 21 12 21c5.52 0 10-4.28 10-9.5S17.52 2 12 2z"/></svg></div>
+        <div><h4>LINEでのご相談</h4><p>24時間メッセージ受付<br>※ID／QRコードを設定予定</p></div>
+      </div>
+      <div class="c-card">
+        <div class="c-ic" style="background:#7A5230"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 7L4 7v1l8 5 8-5V7l-8 5z"/></svg></div>
+        <div><h4>メールでのご相談</h4><p><a href="mailto:forest.park.co9@vega.ocn.ne.jp">forest.park.co9@vega.ocn.ne.jp</a></p></div>
+      </div>
+    </div>
+    <!-- FORM_ENDPOINT_HERE は Formspree または formrun で発行された実際のエンドポイントURLに差し替えてください -->
+    <form class="form" id="contactForm" action="FORM_ENDPOINT_HERE" method="POST">
+      <div class="ft">お問い合わせフォーム</div>
+      <div class="fsub">ご本人・ご家族の方も、ケアマネジャー・関係機関の方もこちらから。</div>
+      <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+      <div class="fr"><label for="f-rikkaba">お立場<span class="badge badge-req">必須</span></label><select id="f-rikkaba" name="rikkaba" required><option>ご本人・ご家族</option><option>ケアマネジャー</option><option>医療機関（地域連携室・MSW等）</option><option>地域包括支援センター</option><option>相談支援専門員</option><option>その他関係機関</option></select></div>
+      <div class="fr"><label for="f-name">お名前／事業所名<span class="badge badge-req">必須</span></label><input id="f-name" type="text" name="name" required autocomplete="name" placeholder="山田 花子／〇〇居宅介護支援事業所"></div>
+      <div class="fr"><label for="f-tel">電話番号<span class="badge badge-req">必須</span></label><input id="f-tel" type="tel" name="tel" required autocomplete="tel" placeholder="06-XXXX-XXXX"></div>
+      <div class="fr"><label for="f-area">お住まい・対象エリア（区市）<span class="badge badge-opt">任意</span></label><input id="f-area" type="text" name="area" placeholder="例：東淀川区、吹田市"></div>
+      <div class="fr"><label for="f-message">ご相談・ご紹介内容<span class="badge badge-req">必須</span></label><textarea id="f-message" name="message" required placeholder="例：来週退院予定の方の訪問介護を検討しています。週3回程度、身体介護中心で空き状況を確認したいです。"></textarea></div>
+      <div class="fr hp-field" aria-hidden="true">
+        <label>このフィールドは入力しないでください</label>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="submit" type="submit">送信する</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="fctn ctn">CAPTURE THE NOW</div>
+  <div class="fbrand">ばななケアラウンド</div>
+  <div class="fco">BNANA CARE AROUND</div>
+  <div class="finfo">
+    居宅介護サービス事業所　株式会社 FOREST PARK<br>
+    代表取締役・事業所管理者　川島 海郡<br>
+    介護保険事業所番号 2773005737／障がい福祉事業所番号 2713003149<br>
+    〒533-0032 大阪府大阪市東淀川区淡路5丁目6番11号 206号室<br>
+    TEL・FAX 06-6755-9974　MAIL forest.park.co9@vega.ocn.ne.jp
+  </div>
+  <div class="copy">© 2026 BNANA CARE AROUND / FOREST PARK Inc.</div>
+</footer>
+
+<div class="mobile-cta-bar" id="mobileCtaBar">
+  <a class="mcb-btn mcb-tel" href="tel:0667559974">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+    電話する
+  </a>
+  <a class="mcb-btn mcb-line" href="#contact">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.28 2 11.5c0 2.94 1.4 5.56 3.6 7.36L5 22l3.24-1.7C9.37 20.73 10.65 21 12 21c5.52 0 10-4.28 10-9.5S17.52 2 12 2z"/></svg>
+    LINEで相談
+  </a>
+</div>
+
+<script>
+(function(){
+  var header = document.querySelector('.topbar');
+  if (!header) return;
+
+  var setHeaderHeightVar = function(){
+    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  };
+  setHeaderHeightVar();
+  window.addEventListener('resize', setHeaderHeightVar);
+
+  var progressFill = document.getElementById('scrollProgressFill');
+
+  var ticking = false;
+  var applyScrolledState = function(){
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    if (progressFill) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var ratio = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      progressFill.style.transform = 'scaleX(' + ratio + ')';
+    }
+    ticking = false;
+  };
+  var onScroll = function(){
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(applyScrolledState);
+    }
+  };
+  applyScrolledState();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+})();
+</script>
+
+<script>
+(function(){
+  var bar = document.querySelector('.mobile-cta-bar');
+  var hero = document.querySelector('.hero');
+  if (!bar || !hero) return;
+
+  var threshold = 0;
+  var computeThreshold = function(){
+    threshold = hero.offsetTop + hero.offsetHeight;
+  };
+  computeThreshold();
+  window.addEventListener('resize', computeThreshold);
+
+  var ticking = false;
+  var applyShownState = function(){
+    bar.classList.toggle('is-shown', window.scrollY > threshold);
+    ticking = false;
+  };
+  var onScroll = function(){
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(applyShownState);
+    }
+  };
+  applyShownState();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+  document.documentElement.classList.add('js');
+
+  var DELAY_STEP = 75; // ms, stagger between cards in the same group (60-90ms range)
+  var GROUPS = [
+    ['.routes', '.route'],
+    ['.worry-grid', '.worry'],
+    ['.svc-grid', '.svc'],
+    ['.partner-grid', '.pitem'],
+    ['.pflow', '.pstep'],
+    ['.str-grid', '.str'],
+    ['.flow', ':scope > li'],
+    ['.area', '.pill', 40]
+  ];
+
+  var targets = [];
+
+  GROUPS.forEach(function(group){
+    var containerSelector = group[0], cardSelector = group[1];
+    var step = group[2] || DELAY_STEP;
+    document.querySelectorAll(containerSelector).forEach(function(container){
+      var cards = container.querySelectorAll(cardSelector);
+      cards.forEach(function(card, i){
+        card.style.transitionDelay = (i * step) + 'ms';
+        targets.push(card);
+      });
+    });
+  });
+
+  document.querySelectorAll('section:not(.hero)').forEach(function(section){
+    targets.push(section);
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+
+  targets.forEach(function(target){ observer.observe(target); });
+})();
+</script>
+
+<script>
+(function(){
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+
+  var msg = document.getElementById('formMsg');
+  var btn = form.querySelector('.submit');
+  var btnDefaultText = btn.textContent;
+  var SUCCESS_TEXT = 'お問い合わせいただきありがとうございます。担当者より追ってご連絡いたします。';
+  var ERROR_TEXT = '送信に失敗しました。お急ぎの場合はお電話（06-6755-9974）にてご連絡ください。';
+
+  var showMessage = function(text, type){
+    msg.textContent = text;
+    msg.className = 'form-msg is-visible ' + type;
+  };
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    var honeypot = form.elements['_gotcha'];
+    if (honeypot && honeypot.value) {
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '送信中…';
+
+    try {
+      var res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        showMessage(SUCCESS_TEXT, 'success');
+        form.reset();
+      } else {
+        showMessage(ERROR_TEXT, 'error');
+      }
+    } catch (err) {
+      showMessage(ERROR_TEXT, 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = btnDefaultText;
+    }
+  });
+})();
+</script>
+</body>
+</html>
