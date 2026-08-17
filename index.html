@@ -389,6 +389,132 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   scroll-margin-top:var(--header-h, 90px);
 }
 
+/* ---------- floating recruit popup ---------- */
+/* 表示のON/OFFは末尾スクリプトの RECRUIT_POPUP_ENABLED で切り替えます */
+.recruit-pop{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:190;
+  width:330px;
+  max-width:calc(100vw - 32px);
+  background:linear-gradient(150deg, var(--banana) 0%, var(--cream-2) 60%, var(--white) 100%);
+  border:1.5px solid var(--banana-deep);
+  border-radius:16px;
+  box-shadow:0 14px 38px rgba(46,42,28,.26);
+  padding:20px 22px 20px;
+  transform:translateX(calc(100% + 40px));
+  opacity:0;
+  pointer-events:none;
+  transition:transform .55s cubic-bezier(.2,1.5,.4,1), opacity .35s ease;
+}
+.recruit-pop.is-shown{
+  transform:translateX(0);
+  opacity:1;
+  pointer-events:auto;
+}
+.recruit-pop .rp-eyebrow{
+  display:inline-block;
+  font-family:'Archivo',sans-serif;
+  font-weight:800;
+  font-stretch:125%;
+  font-size:11px;
+  letter-spacing:.16em;
+  color:var(--brown);
+  background:rgba(255,253,244,.75);
+  border:1px solid var(--banana-deep);
+  border-radius:20px;
+  padding:3px 11px;
+  margin-bottom:11px;
+}
+.recruit-pop h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:18.5px;
+  font-weight:600;
+  line-height:1.55;
+  letter-spacing:.02em;
+  margin-bottom:7px;
+  color:var(--ink);
+}
+.recruit-pop p{
+  font-size:13.5px;
+  line-height:1.75;
+  color:var(--ink-soft);
+  margin-bottom:15px;
+}
+.recruit-pop .rp-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Noto Serif JP',serif;
+  font-weight:600;
+  font-size:14.5px;
+  letter-spacing:.05em;
+  text-decoration:none;
+  padding:12px 16px;
+  border-radius:9px;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.recruit-pop .rp-close{
+  position:absolute;
+  top:9px;
+  right:9px;
+  width:30px;
+  height:30px;
+  border:none;
+  background:rgba(255,253,244,.7);
+  border-radius:50%;
+  color:var(--brown);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  transition:background .2s ease;
+}
+.recruit-pop .rp-close:hover{background:var(--white)}
+@keyframes rpNudge{
+  0%, 88%, 100%{ transform:translateX(0) rotate(0); }
+  91%{ transform:translateX(-5px) rotate(-1.2deg); }
+  94%{ transform:translateX(4px) rotate(1deg); }
+  97%{ transform:translateX(-2px) rotate(-.4deg); }
+}
+.recruit-pop.is-shown.is-settled{
+  animation:rpNudge 7s ease-in-out 1.2s infinite;
+}
+@media (hover:hover){
+  .recruit-pop .rp-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(46,42,28,.28);
+  }
+}
+@media(max-width:760px){
+  .recruit-pop{
+    right:12px;
+    left:12px;
+    width:auto;
+    bottom:calc(56px + env(safe-area-inset-bottom) + 12px);
+    padding:17px 18px;
+    transform:translateY(calc(100% + 90px));
+  }
+  .recruit-pop.is-shown{transform:translateY(0)}
+  .recruit-pop h4{font-size:16.5px}
+  .recruit-pop p{font-size:13px;margin-bottom:13px}
+}
+@media (prefers-reduced-motion: reduce){
+  .recruit-pop{
+    transition:opacity .3s ease;
+    transform:none;
+  }
+  .recruit-pop.is-shown{transform:none}
+  .recruit-pop.is-shown.is-settled{animation:none}
+  .recruit-pop .rp-btn{transition:none}
+  .recruit-pop .rp-btn:hover{transform:none}
+}
+
 /* mobile-only fixed bottom CTA bar */
 .mobile-cta-bar{
   display:none;
@@ -697,6 +823,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   </a>
 </div>
 
+<!-- 採用ページへの誘導ポップアップ。既定では非表示です。有効化は末尾スクリプトの RECRUIT_POPUP_ENABLED を true にしてください -->
+<aside class="recruit-pop" id="recruitPop" aria-label="スタッフ募集のお知らせ" hidden>
+  <button class="rp-close" id="recruitPopClose" type="button" aria-label="このお知らせを閉じる">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <span class="rp-eyebrow">STAFF WANTED</span>
+  <h4>いっしょに働く仲間を<br>募集しています。</h4>
+  <p>未経験・ブランクのある方も歓迎です。まずは事業所の見学だけでも構いません。</p>
+  <a class="rp-btn" href="recruit.html">
+    採用情報を見る
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+  </a>
+</aside>
+
 <script>
 (function(){
   var header = document.querySelector('.topbar');
@@ -808,6 +948,67 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
 
   targets.forEach(function(target){ observer.observe(target); });
+})();
+</script>
+
+<script>
+(function(){
+  // ▼ 採用ページ誘導ポップアップの表示スイッチ。
+  //    採用ページの仮数値と〇表記を確定させたら true に変更してください。
+  var RECRUIT_POPUP_ENABLED = true;
+
+  if (!RECRUIT_POPUP_ENABLED) return;
+
+  var pop = document.getElementById('recruitPop');
+  var closeBtn = document.getElementById('recruitPopClose');
+  var hero = document.querySelector('.hero');
+  if (!pop || !closeBtn || !hero) return;
+
+  // 一度閉じたら、そのブラウザセッション中は再表示しない
+  var DISMISS_KEY = 'recruitPopDismissed';
+  try {
+    if (window.sessionStorage && sessionStorage.getItem(DISMISS_KEY)) return;
+  } catch (e) {}
+
+  pop.removeAttribute('hidden');
+
+  var threshold = 0;
+  var computeThreshold = function(){
+    // ヒーローを過ぎ、理念セクションを読み始めたあたりで出す
+    threshold = hero.offsetTop + hero.offsetHeight * 1.15;
+  };
+  computeThreshold();
+  window.addEventListener('resize', computeThreshold);
+
+  var shown = false;
+  var ticking = false;
+
+  var applyShownState = function(){
+    if (!shown && window.scrollY > threshold) {
+      shown = true;
+      pop.classList.add('is-shown');
+      // スライドインが終わってから、ときどき揺れるアニメーションを始める
+      window.setTimeout(function(){ pop.classList.add('is-settled'); }, 700);
+    }
+    ticking = false;
+  };
+  var onScroll = function(){
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(applyShownState);
+    }
+  };
+  applyShownState();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  closeBtn.addEventListener('click', function(){
+    pop.classList.remove('is-shown', 'is-settled');
+    window.setTimeout(function(){ pop.setAttribute('hidden', ''); }, 600);
+    window.removeEventListener('scroll', onScroll);
+    try {
+      if (window.sessionStorage) sessionStorage.setItem(DISMISS_KEY, '1');
+    } catch (e) {}
+  });
 })();
 </script>
 
