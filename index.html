@@ -731,6 +731,11 @@ body.has-recruit-bar{padding-bottom:calc(var(--recruit-bar-h, 74px) + 16px)}
     syncBarHeight();
     document.body.classList.add('has-recruit-bar');
     window.addEventListener('resize', syncBarHeight);
+    // Webフォント適用で文言が折り返し、バナーの高さが変わることがある。
+    // フォント確定後にもう一度実測し、下余白（フッターが隠れないための余白）を合わせる
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(syncBarHeight);
+    }
   };
 
   // 一度閉じたら、そのブラウザセッション中はポップアップを出さずバナーだけを出す
