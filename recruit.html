@@ -207,6 +207,11 @@ body{background:var(--cream);font-family:'Noto Sans JP',sans-serif;color:var(--i
   .day .t{width:62px;font-size:13px}
   .day li{gap:14px}
   .topbar-inner{justify-content:center;text-align:center}
+  /* モバイルでは画面が狭く、社名・ナビ・電話番号の固定表示が縦幅を圧迫するため追従させない */
+  .topbar{position:static}
+  .topbar.scrolled{box-shadow:none}
+  .topbar.scrolled .topbar-inner{padding:14px 24px}
+  #jobs, #requirements, #faq, #apply, #beginners{scroll-margin-top:12px}
 }
 
 /* hover/focus micro-interactions */
